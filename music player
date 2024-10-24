@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.player {
+    background: #eee9e9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <title>Simple Music Player</title>
+</head>
+<body>
+    <div class="player">
+        <h1>Simple Music Player</h1>
+        <audio id="audio" src="./128-Sajna Ve Sajna - Vicky Vidya Ka Woh Wala Video 128 Kbps.mp3"></audio>
+        <div class="controls">
+            <button id="playBtn">Play</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="stopBtn">Stop</button>
+        </div>
+        <div class="track-info">
+            <span id="trackName">Track Name</span>
+        </div>
+    </div>
+
+    <script >
+    const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const stopBtn = document.getElementById('stopBtn');
+const trackName = document.getElementById('trackName');
+
+// Set track name
+trackName.textContent = "Sajna ve sajna";
+
+playBtn.addEventListener('click', () => {
+    audio.play();
+});
+
+pauseBtn.addEventListener('click', () => {
+    audio.pause();
+});
+
+stopBtn.addEventListener('click', () => {
+    audio.pause();
+    audio.currentTime = 0; // Reset to the start
+});
+
+    </script>
+</body>
+</html>
